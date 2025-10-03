@@ -1,0 +1,17 @@
+{
+  "welcome": "Hoş geldiniz",
+  "success": "Başarılı",
+  "error": "Hata",
+  "loading": "Yüklüyor...",
+  "save": "Kaydet",
+  "cancel": "İptal",
+  "delete": "Sil",
+  "edit": "Düzenle",
+  "create": "Oluştur",
+  "update": "Güncelle",
+  "profile": {
+    "title": "Profil",
+    "updated": "Profil başarıyla güncellendi",
+    "notFound": "Profil bulunamadı"
+  }
+}

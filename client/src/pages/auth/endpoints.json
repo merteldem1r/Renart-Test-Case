@@ -1,0 +1,4 @@
+{
+  "SignUp": "user/signup",
+  "GetMe": "profiles/me"
+}

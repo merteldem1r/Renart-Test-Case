@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden"
+  },
+  "server": {
+    "internalError": "Internal server error",
+    "notFound": "Resource not found",
+    "badRequest": "Bad request"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "header": {
+    "navigation": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "faq": "FAQ"
+    },
+    "actions": {
+      "getStarted": "Get Started",
+      "dashboard": "Dashboard",
+      "welcome": "Welcome back, {{username}}!"
+    },
+    "language": {
+      "label": "Language / Dil"
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "Master Your Next",
+      "titleHighlight": "Interview",
+      "description": "Practice with <b>AI-powered interviews</b> from various industries and roles, get detailed feedback, add your friends and share your results. This app was developed by Computer Engineering student from <a href=\"https://medeniyet.edu.tr/en\" target=\"_blank\" className=\"underline! text-black! hover:text-blue-600! transition-colors\">Istanbul Medeniyet University</a>.",
+      "startForFree": "Start for Free",
+      "watchDemo": "Watch Demo"
+    },
+    "section": {
+      "title": "Features of VOXReady",
+      "description": "AI-powered platform provides everything you need to excel in your next interview."
+    },
+    "list": [
+      {
+        "title": "AI-Powered Interviews",
+        "description": "Practice with our AI that simulates real interview scenarios across various industries and roles."
+      },
+      {
+        "title": "Performance Tracking",
+        "description": "Get detailed analytics and insights on your interview performance with actionable feedback."
+      },
+      {
+        "title": "Flexible Scheduling",
+        "description": "Practice anytime, anywhere with 24/7 availability. No need to coordinate with human interviewers."
+      },
+      {
+        "title": "Industry-Specific Questions",
+        "description": "Access thousands of questions tailored to your specific industry, role, and experience level."
+      }
+    ],
+    "benefits": {
+      "title": "Transform Your Interview Skills",
+      "description": "Our comprehensive platform helps you build confidence and master the art of interviewing through personalized practice sessions and detailed feedback.",
+      "list": [
+        "Reduce interview anxiety through repeated practice",
+        "Improve communication skills and confidence",
+        "Learn from detailed feedback and suggestions",
+        "Track your progress over time",
+        "Access to industry-specific question banks",
+        "Practice behavioral and technical questions",
+        "Get real-time performance analytics",
+        "Prepare for different interview formats"
+      ]
+    },
+    "analytics": {
+      "title": "Performance Analytics",
+      "description": "Track your progress over time",
+      "skills": {
+        "communication": "Communication Skills",
+        "technical": "Technical Knowledge",
+        "confidence": "Confidence Level"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Simple Pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0",
+        "description": "Just use it for free with many features.",
+        "features": [
+          "Sign Up and get 2 Free credits!",
+          "Add friends and share interview results",
+          "Find asked interview questions from verified users"
+        ],
+        "buttonText": "Start Free"
+      },
+      {
+        "name": "3 Credits",
+        "price": "2.99",
+        "description": "Ideal for serious job seekers and career changers",
+        "features": [
+          "Everything in Free",
+          "Advanced performance analytics",
+          "Access to all industry question banks",
+          "Detailed feedback reports",
+          "Custom interview scenarios",
+          "Progress tracking dashboard",
+          "Mock interview recordings"
+        ],
+        "buttonText": "Simulate Interview"
+      },
+      {
+        "name": "7 Credits",
+        "price": "5.99",
+        "description": "For teams and organizations with advanced needs",
+        "features": [
+          "Everything in Free",
+          "Team management dashboard",
+          "Custom question bank creation",
+          "API access",
+          "Dedicated account manager",
+          "White-label solutions",
+          "Advanced analytics & reporting",
+          "Integration with HR systems",
+          "Custom training programs"
+        ],
+        "buttonText": "Contact Sales"
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "categories": [
+      {
+        "title": "Getting Started",
+        "questions": [
+          {
+            "question": "How do I get started with InterviewerAI?",
+            "answer": "Getting started is easy! Simply sign up for a free account, choose your industry and role, and start your first AI-powered interview session. You can begin practicing immediately with our guided setup process."
+          },
+          {
+            "question": "Is there a free trial available?",
+            "answer": "Yes! All our plans include a 7-day free trial with full access to all features. No credit card is required to start your trial. You can upgrade to a paid plan anytime during or after your trial."
+          },
+          {
+            "question": "What industries and roles do you support?",
+            "answer": "We support 50+ industries including Technology, Finance, Healthcare, Marketing, Sales, Engineering, Design, and more. Each industry has role-specific questions tailored to different experience levels."
+          },
+          {
+            "question": "Can I use InterviewerAI on mobile devices?",
+            "answer": "Yes! InterviewerAI is fully responsive and works on all devices including smartphones and tablets. You can practice interviews anywhere, anytime with our mobile-optimized interface."
+          }
+        ]
+      },
+      {
+        "title": "AI Interview Sessions",
+        "questions": [
+          {
+            "question": "How realistic are the AI interview sessions?",
+            "answer": "Our AI is trained on thousands of real interview scenarios and uses advanced natural language processing to provide realistic, contextual responses. The AI adapts to your answers and asks follow-up questions just like a real interviewer."
+          },
+          {
+            "question": "What types of questions does the AI ask?",
+            "answer": "The AI asks a mix of behavioral, technical, and situational questions relevant to your industry and role. Questions range from basic to advanced, and the AI can ask follow-up questions based on your responses."
+          },
+          {
+            "question": "Can I customize the interview scenarios?",
+            "answer": "Yes! Professional and Enterprise users can create custom interview scenarios, set specific topics, and even simulate interviews with particular company styles or interview formats."
+          },
+          {
+            "question": "How long do interview sessions typically last?",
+            "answer": "Interview sessions typically last 15-30 minutes, but you can adjust the duration based on your preferences. You can also pause and resume sessions at any time."
+          }
+        ]
+      }
+    ],
+    "search": {
+      "noResults": "No results found for \"{{searchTerm}}\"",
+      "noResultsDescription": "Try searching with different keywords or browse our categories above.",
+      "clearSearch": "Clear Search"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "VOXReady AI",
+      "description": "Master your next interview with AI-powered practice sessions, detailed feedback, and comprehensive analytics."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "login": "Login"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Help Center",
+      "contactUs": "Contact Us",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "copyright": "© 2024 VOXReady. All rights reserved."
+  }
+}

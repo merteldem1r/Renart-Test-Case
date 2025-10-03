@@ -1,0 +1,17 @@
+{
+  "welcome": "Welcome",
+  "success": "Success",
+  "error": "Error",
+  "loading": "Loading...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "create": "Create",
+  "update": "Update",
+  "profile": {
+    "title": "Profile",
+    "updated": "Profile updated successfully",
+    "notFound": "Profile not found"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "unauthorized": "Yetkisiz erişim",
+    "forbidden": "Erişim yasak"
+  },
+  "server": {
+    "internalError": "Sunucu iç hatası",
+    "notFound": "Kaynak bulunamadı",
+    "badRequest": "Hatalı istek"
+  }
+}

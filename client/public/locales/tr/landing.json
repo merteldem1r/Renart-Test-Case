@@ -1,0 +1,192 @@
+{
+  "header": {
+    "navigation": {
+      "features": "Özellikler",
+      "pricing": "Fiyatlandırma",
+      "faq": "SSS"
+    },
+    "actions": {
+      "getStarted": "Hemen Başla",
+      "dashboard": "Kontrol Paneli",
+      "welcome": "Tekrar hoş geldin, {{username}}!"
+    },
+    "language": {
+      "label": "Language / Dil"
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "Bir Sonraki Mülakatını",
+      "titleHighlight": "Başarıyla Tamamla",
+      "description": "Çeşitli sektör ve rollerden <b>yapay zeka destekli mülakatlar</b> ile pratik yap, detaylı geri bildirim al, arkadaşlarını ekle ve sonuçlarını paylaş. Bu uygulama <a href=\"https://medeniyet.edu.tr\" target=\"_blank\" className=\"underline! text-black! hover:text-blue-600! transition-colors\">İstanbul Medeniyet Üniversitesi</a> Bilgisayar Mühendisliği öğrencisi tarafından geliştirilmiştir.",
+      "startForFree": "Ücretsiz Başla",
+      "watchDemo": "Demo İzle"
+    },
+    "section": {
+      "title": "VOXReady Özellikleri",
+      "description": "Yapay zeka destekli platform, bir sonraki mülakatınızda başarılı olmanız için ihtiyacınız olan her şeyi sağlar."
+    },
+    "list": [
+      {
+        "title": "Yapay Zeka Destekli Mülakatlar",
+        "description": "Çeşitli sektörler ve roller boyunca gerçek mülakat senaryolarını simüle eden yapay zekamızla pratik yapın."
+      },
+      {
+        "title": "Performans Takibi",
+        "description": "Mülakat performansınız hakkında eylem odaklı geri bildirimlerle detaylı analitik ve içgörüler elde edin."
+      },
+      {
+        "title": "Esnek Zamanlama",
+        "description": "7/24 erişilebilirlikle her zaman, her yerde pratik yapın. İnsan mülakatçılarla koordinasyon kurma gereği yok."
+      },
+      {
+        "title": "Sektöre Özel Sorular",
+        "description": "Spesifik sektörünüze, rolünüze ve deneyim seviyenize göre özelleştirilmiş binlerce soruya erişim."
+      }
+    ],
+    "benefits": {
+      "title": "Mülakat Becerilerinizi Dönüştürün",
+      "description": "Kapsamlı platformumuz, kişiselleştirilmiş pratik oturumları ve detaylı geri bildirimlerle güven kazanmanıza ve mülakat sanatında ustalaşmanıza yardımcı olur.",
+      "list": [
+        "Tekrarlanan pratiklerle mülakat kaygısını azaltın",
+        "İletişim becerilerini ve güveni artırın",
+        "Detaylı geri bildirim ve önerilerden öğrenin",
+        "Zaman içindeki ilerlemenizi takip edin",
+        "Sektöre özel soru bankalarına erişim",
+        "Davranışsal ve teknik sorularda pratik yapın",
+        "Gerçek zamanlı performans analitiği elde edin",
+        "Farklı mülakat formatlarına hazırlanın"
+      ]
+    },
+    "analytics": {
+      "title": "Performans Analitiği",
+      "description": "Zaman içindeki ilerlemenizi takip edin",
+      "skills": {
+        "communication": "İletişim Becerileri",
+        "technical": "Teknik Bilgi",
+        "confidence": "Güven Seviyesi"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Basit Fiyatlandırma",
+    "plans": [
+      {
+        "name": "Ücretsiz",
+        "price": "0",
+        "description": "Birçok özellikle ücretsiz kullanın.",
+        "features": [
+          "Kaydol ve 2 Ücretsiz kredi kazan!",
+          "Arkadaş ekle ve mülakat sonuçlarını paylaş",
+          "Doğrulanmış kullanıcılardan sorulan mülakat sorularını bul"
+        ],
+        "buttonText": "Ücretsiz Başla"
+      },
+      {
+        "name": "3 Kredi",
+        "price": "2.99",
+        "description": "Ciddi iş arayanlar ve kariyer değiştirenler için ideal",
+        "features": [
+          "Ücretsiz plandaki her şey",
+          "Gelişmiş performans analitiği",
+          "Tüm sektör soru bankalarına erişim",
+          "Detaylı geri bildirim raporları",
+          "Özel mülakat senaryoları",
+          "İlerleme takip panosu",
+          "Sahte mülakat kayıtları"
+        ],
+        "buttonText": "Mülakat Simülasyonu"
+      },
+      {
+        "name": "7 Kredi",
+        "price": "5.99",
+        "description": "Gelişmiş ihtiyaçları olan takımlar ve organizasyonlar için",
+        "features": [
+          "Ücretsiz plandaki her şey",
+          "Takım yönetimi panosu",
+          "Özel soru bankası oluşturma",
+          "API erişimi",
+          "Özel hesap yöneticisi",
+          "Beyaz etiket çözümler",
+          "Gelişmiş analitik ve raporlama",
+          "İK sistemleriyle entegrasyon",
+          "Özel eğitim programları"
+        ],
+        "buttonText": "Satış Ekibiyle İletişime Geç"
+      }
+    ]
+  },
+  "faq": {
+    "title": "SSS",
+    "categories": [
+      {
+        "title": "Başlarken",
+        "questions": [
+          {
+            "question": "InterviewerAI ile nasıl başlarım?",
+            "answer": "Başlamak kolay! Sadece ücretsiz bir hesap açın, sektörünüzü ve rolünüzü seçin ve ilk yapay zeka destekli mülakat oturumunuzu başlatın. Rehberli kurulum süreciyle hemen pratik yapmaya başlayabilirsiniz."
+          },
+          {
+            "question": "Ücretsiz deneme sürümü var mı?",
+            "answer": "Evet! Tüm planlarımız tüm özelliklere tam erişimli 7 günlük ücretsiz deneme içerir. Denemeyi başlatmak için kredi kartı gerekmez. Deneme süresince veya sonrasında istediğiniz zaman ücretli plana yükseltme yapabilirsiniz."
+          },
+          {
+            "question": "Hangi sektörleri ve rolleri destekliyorsunuz?",
+            "answer": "Teknoloji, Finans, Sağlık, Pazarlama, Satış, Mühendislik, Tasarım ve daha fazlası dahil 50+ sektörü destekliyoruz. Her sektörün farklı deneyim seviyelerine göre özelleştirilmiş role özel soruları vardır."
+          },
+          {
+            "question": "InterviewerAI'ı mobil cihazlarda kullanabilir miyim?",
+            "answer": "Evet! InterviewerAI tamamen duyarlıdır ve akıllı telefonlar ve tabletler dahil tüm cihazlarda çalışır. Mobil optimize edilmiş arayüzümüzle her zaman, her yerde mülakat pratiği yapabilirsiniz."
+          }
+        ]
+      },
+      {
+        "title": "Yapay Zeka Mülakat Oturumları",
+        "questions": [
+          {
+            "question": "Yapay zeka mülakat oturumları ne kadar gerçekçi?",
+            "answer": "Yapay zekamız binlerce gerçek mülakat senaryosu üzerinde eğitilmiştir ve gerçekçi, bağlamsal yanıtlar sağlamak için gelişmiş doğal dil işleme kullanır. Yapay zeka, yanıtlarınıza uyum sağlar ve tıpkı gerçek bir mülakatçı gibi takip soruları sorar."
+          },
+          {
+            "question": "Yapay zeka ne tür sorular soruyor?",
+            "answer": "Yapay zeka, sektörünüz ve rolünüzle ilgili davranışsal, teknik ve durumsal soruların bir karışımını sorar. Sorular temel seviyeden ileri seviyeye kadar değişir ve yapay zeka yanıtlarınıza göre takip soruları sorabilir."
+          },
+          {
+            "question": "Mülakat senaryolarını özelleştirebilir miyim?",
+            "answer": "Evet! Profesyonel ve Kurumsal kullanıcılar özel mülakat senaryoları oluşturabilir, belirli konular belirleyebilir ve hatta belirli şirket tarzları veya mülakat formatlarıyla mülakatları simüle edebilir."
+          },
+          {
+            "question": "Mülakat oturumları genellikle ne kadar sürer?",
+            "answer": "Mülakat oturumları genellikle 15-30 dakika sürer, ancak tercihlerinize göre süreyi ayarlayabilirsiniz. Ayrıca oturumları istediğiniz zaman duraklatabilir ve devam ettirebilirsiniz."
+          }
+        ]
+      }
+    ],
+    "search": {
+      "noResults": "\"{{searchTerm}}\" için sonuç bulunamadı",
+      "noResultsDescription": "Farklı anahtar kelimelerle aramayı deneyin veya yukarıdaki kategorilere göz atın.",
+      "clearSearch": "Aramayı Temizle"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "VOXReady AI",
+      "description": "Yapay zeka destekli pratik oturumları, detaylı geri bildirimler ve kapsamlı analizlerle bir sonraki mülakatınızda ustalaşın."
+    },
+    "quickLinks": {
+      "title": "Hızlı Bağlantılar",
+      "home": "Ana Sayfa",
+      "pricing": "Fiyatlandırma",
+      "faq": "SSS",
+      "login": "Giriş"
+    },
+    "support": {
+      "title": "Destek",
+      "helpCenter": "Yardım Merkezi",
+      "contactUs": "Bize Ulaşın",
+      "termsOfService": "Hizmet Şartları",
+      "privacyPolicy": "Gizlilik Politikası"
+    },
+    "copyright": "© 2024 VOXReady. Tüm hakları saklıdır."
+  }
+}
