@@ -7,6 +7,7 @@ import { I18nLanguageModule } from "./modules/language/language.module";
 import { ProfilesModule } from "./modules/profiles/profiles.module";
 import { SupabaseModule } from "./modules/supabase/supabase.module";
 import { SupabaseService } from "./modules/supabase/supabase.service";
+import { ProductsModule } from './modules/products/products.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { SupabaseService } from "./modules/supabase/supabase.service";
     SupabaseModule,
     I18nLanguageModule,
     ProfilesModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService, SupabaseService],
