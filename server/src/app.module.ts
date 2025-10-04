@@ -4,10 +4,11 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { I18nLanguageModule } from "./modules/language/language.module";
+import { ProductsModule } from "./modules/products/products.module";
 import { ProfilesModule } from "./modules/profiles/profiles.module";
 import { SupabaseModule } from "./modules/supabase/supabase.module";
 import { SupabaseService } from "./modules/supabase/supabase.service";
-import { ProductsModule } from './modules/products/products.module';
+import { GoldPriceModule } from './modules/gold-price/gold-price.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { ProductsModule } from './modules/products/products.module';
     I18nLanguageModule,
     ProfilesModule,
     ProductsModule,
+    GoldPriceModule,
   ],
   controllers: [AppController],
   providers: [AppService, SupabaseService],

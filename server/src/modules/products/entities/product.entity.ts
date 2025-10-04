@@ -4,25 +4,29 @@ import {
   CreateDateColumn,
   Entity,
   Index,
+  PrimaryColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 
-@Check(`"popularityScore" >= 0 AND popularityScore <= 1`)
+@Check(`"popularity_score" >= 0 AND popularity_score <= 1`)
 @Entity({ name: "products" })
 export class Product {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryColumn("uuid")
   id!: string;
 
-  @Column({ unique: true, type: "varchar", length: 12 })
   @Index({ unique: true })
+  @Column({ unique: true, type: "varchar", length: 64 })
   name!: string;
 
-  @Column({ type: "double precision", nullable: false })
-  popularityScore!: number;
+  @Column({ type: "numeric", nullable: false })
+  popularity_score!: number;
 
-  @Column({ type: "double precision", nullable: false })
+  @Column({ type: "numeric", nullable: false })
   weight: number;
+
+  @Column({ type: "jsonb", nullable: true })
+  images?: { yellow: string; rose: string; white: string };
 
   @Column({ type: "boolean", default: false })
   disabled!: boolean;
