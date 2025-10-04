@@ -9,7 +9,7 @@ const SuspenseFallback: React.FC = () => {
         <div className="text-center">
           <div className="text-2xl font-bold group hover:text-blue-700 transition-colors duration-200 mb-2">
             <span className="text-blue-600 group-hover:text-black transition-colors">
-              Name Here
+              Karat
             </span>
           </div>
 

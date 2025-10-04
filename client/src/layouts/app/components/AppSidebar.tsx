@@ -123,10 +123,7 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
               className="text-2xl font-bold group hover:text-blue-700 transition-colors duration-200"
             >
               <span className="text-blue-600 group-hover:text-black transition-colors">
-                VOX
-              </span>
-              <span className="text-black group-hover:text-blue-600 ">
-                Ready
+                Karat
               </span>
             </NavLink>
           </Text>

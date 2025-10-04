@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-import { UserAuth } from "../../../../VOXReady-Client/src/context/auth/AuthContext";
-import { showNotification } from "../../../../VOXReady-Client/src/hooks/useNotification";
-import authEndpoints from "../../../../VOXReady-Client/src/pages/auth/endpoints.json";
-import { apiGet } from "../../../../VOXReady-Client/src/services/client";
 import ProtectedRouteLoading from "./components/ProtectedRouteLoading";
+import { apiGet } from "../services/client";
+import { UserAuth } from "../context/auth/AuthContext";
+import { showNotification } from "../hooks/useNotification";
+import authEndpoints from "./../pages/auth/endpoints.json";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;

@@ -38,9 +38,6 @@ export class Profile {
   @Column({ type: "boolean", default: false })
   phone_verified!: boolean;
 
-  @Column({ type: "timestamptz", nullable: true, default: null })
-  free_credits_granted_at?: Date | null;
-
   @Column({ type: "boolean", default: false })
   disabled!: boolean;
 

@@ -12,7 +12,7 @@
   "api": {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "X-Client-App": "VoxReady-Client",
+    "X-Client-App": "Karat-Client",
     "X-Client-Version": "1.0.0"
   },
   "upload": {

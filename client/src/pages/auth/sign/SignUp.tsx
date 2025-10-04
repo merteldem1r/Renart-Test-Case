@@ -72,7 +72,7 @@ const SignUp: React.FC = () => {
             className="text-4xl font-bold group hover:text-blue-700 transition-colors duration-200"
           >
             <span className="text-blue-600 group-hover:text-black transition-colors">
-              Name Here
+              Karat
             </span>
           </NavLink>
           <Title level={3} className="text-xl font-bold text-theme mt-2">
@@ -84,13 +84,6 @@ const SignUp: React.FC = () => {
           <div className="text-center">
             <Text className="text-green-800 dark:text-green-200 font-medium block mb-2">
               {t("signup.promotion.title")}
-            </Text>
-            <Text className="text-green-700 dark:text-green-300 text-sm">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: t("signup.promotion.subtitle"),
-                }}
-              />
             </Text>
           </div>
         </Card>

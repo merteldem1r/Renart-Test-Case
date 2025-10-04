@@ -109,9 +109,8 @@ const AuthCallback: React.FC = () => {
             className="text-4xl font-bold group hover:text-blue-700 transition-colors duration-200"
           >
             <span className="text-blue-600 group-hover:text-black transition-colors">
-              VOX
+              Karat
             </span>
-            Ready
           </NavLink>
         </div>
 
