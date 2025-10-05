@@ -21,9 +21,22 @@ async function bootstrap() {
   await app.register(cors, {
     origin: process.env.CORS_ORIGIN?.split(",") ?? true,
     credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Accept",
+      "Accept-Language",
+      "Content-Type",
+      "Authorization",
+    ],
+    exposedHeaders: ["Content-Length", "Content-Type"],
+    maxAge: 600,
   });
   await app.register(helmet);
-  await app.register(rateLimit, { max: 300, timeWindow: "1 minute" });
+  await app.register(rateLimit, {
+    max: 300,
+    timeWindow: "1 minute",
+    allowList: (req) => req.raw.method === "OPTIONS",
+  });
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   app.useGlobalPipes(

@@ -2,14 +2,13 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import axios from "axios";
 import i18n from "i18next";
 import { supabase } from "../supabaseClient";
-import securityHeaders from "./headers.json";
 
 // Create axios instance with base configuration
 const apiClient: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000/api/v1",
   timeout: 10000,
   headers: {
-    ...securityHeaders.auth,
+    Accept: "application/json",
   },
 });
 
