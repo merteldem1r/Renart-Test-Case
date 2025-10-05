@@ -62,9 +62,13 @@ export class ProfilesAuthService {
 
     // TODO: change the email invite logic (change the smtp provider)
     // email verification
+    const redirectURL =
+      process.env.NODE_ENV == "development"
+        ? process.env.CLIENT_URL
+        : process.env.CLIENT_URL_PROD;
     const { data: emailData, error: emailError } =
       await supabaseClient.auth.admin.inviteUserByEmail(email, {
-        redirectTo: `${process.env.CLIENT_URL}/auth/callback`,
+        redirectTo: `${redirectURL}/auth/callback`,
       });
 
     if (emailError) {
@@ -84,10 +88,8 @@ export class ProfilesAuthService {
   }
 
   async forgotPassword(forgotPasswordData: ForgotPasswordDto) {
-    const {email} = forgotPasswordData;
+    const { email } = forgotPasswordData;
 
-    const foundUser = this.Profiles.findOneBy({
-      
-    })
+    const foundUser = this.Profiles.findOneBy({});
   }
 }

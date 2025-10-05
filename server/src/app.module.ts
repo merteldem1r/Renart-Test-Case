@@ -8,17 +8,14 @@ import { ProductsModule } from "./modules/products/products.module";
 import { ProfilesModule } from "./modules/profiles/profiles.module";
 import { SupabaseModule } from "./modules/supabase/supabase.module";
 import { SupabaseService } from "./modules/supabase/supabase.service";
-import { GoldPriceModule } from './modules/gold-price/gold-price.module';
+import { GoldPriceModule } from "./modules/gold-price/gold-price.module";
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: "postgres",
-      url:
-        process.env.NODE_ENV == "development"
-          ? process.env.DATABASE_URL
-          : process.env.DATABASE_URL_DIRECT,
+      url: process.env.DATABASE_URL,
       synchronize: process.env.NODE_ENV == "development",
       autoLoadEntities: true,
       ssl: { rejectUnauthorized: false },
