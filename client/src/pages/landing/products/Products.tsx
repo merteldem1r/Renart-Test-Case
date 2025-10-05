@@ -91,6 +91,7 @@ const Products: React.FC = () => {
             {products.map((product) => (
               <div key={product.id}>
                 <ProductItem
+                  id={product.id}
                   name={product.name}
                   popularity_score={product.popularity_score}
                   images={product.images}

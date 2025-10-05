@@ -8,7 +8,7 @@ import { UserAuth } from "../../../context/auth/AuthContext";
 import { showNotification } from "../../../hooks/useNotification";
 import type { SignInForm } from "../models";
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Text } = Typography;
 
 const SignIn = () => {
   const { t } = useTranslation("auth");

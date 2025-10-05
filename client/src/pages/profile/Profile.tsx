@@ -3,6 +3,7 @@ import { Card, Typography, Avatar, Row, Col, Tag, Divider } from 'antd';
 import { UserOutlined, MailOutlined, CalendarOutlined, CrownOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { UserAuth } from '../../context/auth/AuthContext';
+import CartItems from '../../components/cart/CartItems';
 
 const { Title, Text } = Typography;
 
@@ -21,8 +22,8 @@ export const Profile: React.FC = () => {
   const user = session.user;
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-primary-100 p-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b mt-6 from-white to-primary-100 p-6">
+      <div className="max-w-4xl mx-auto mb-7">
         <Card className="shadow-lg border-primary-200">
           <div className="text-center mb-8">
             <Avatar 
@@ -105,6 +106,11 @@ export const Profile: React.FC = () => {
             </Col>
           </Row>
         </Card>
+
+        {/* Cart Items Section */}
+        <div className="mt-8">
+          <CartItems />
+        </div>
       </div>
     </div>
   );

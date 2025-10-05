@@ -61,7 +61,14 @@
     "filter": "Filtrele",
     "reset": "Sıfırla",
     "noProducts": "Ürün bulunamadı",
-    "checkBackLater": "Lütfen yeni ürünler için daha sonra tekrar kontrol edin."
+    "checkBackLater": "Lütfen yeni ürünler için daha sonra tekrar kontrol edin.",
+    "addToCart": "Sepete Ekle",
+    "addedToCart": "Sepete Git",
+    "colors": {
+      "yellow": "Sarı Altın",
+      "white": "Beyaz Altın",
+      "rose": "Rose Altın"
+    }
   },
   "faq": {
     "title": "Sıkça Sorulan Sorular",

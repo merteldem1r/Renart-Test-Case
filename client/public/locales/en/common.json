@@ -26,5 +26,13 @@
     "notProvided": "Not provided",
     "unknown": "Unknown",
     "memberSince": "Member Since"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "quantity": "Qty",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "clearAll": "Clear All"
   }
 }

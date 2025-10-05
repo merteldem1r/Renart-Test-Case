@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import SuspenseFallback from "./components/ui/SuspenseFallback";
 import { AuthContextProvider } from "./context/auth/AuthContext";
+import { CartProvider } from "./context/cart/CartContext";
 import { useGlobalNotification } from "./hooks/useNotification";
 import AppLayout from "./layouts/app/AppLayout";
 import AuthLayout from "./layouts/auth/AuthLayout";
@@ -60,9 +61,11 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
-        <Suspense fallback={<SuspenseFallback />}>
-          <AppContent />
-        </Suspense>
+        <CartProvider>
+          <Suspense fallback={<SuspenseFallback />}>
+            <AppContent />
+          </Suspense>
+        </CartProvider>
       </AuthContextProvider>
     </QueryClientProvider>
   );

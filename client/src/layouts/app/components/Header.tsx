@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { UserAuth } from "../../../context/auth/AuthContext";
 import { useScrollToTop } from "../../../hooks/useScrollToTop";
+import CartIcon from "../../../components/cart/CartIcon";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -108,6 +109,8 @@ const Header: React.FC = () => {
                 >
                   @{session.user.user_metadata.username}
                 </NavLink>
+
+                <CartIcon />
               </div>
             ) : (
               <Button

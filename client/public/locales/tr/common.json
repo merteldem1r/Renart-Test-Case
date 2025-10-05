@@ -26,5 +26,13 @@
     "notProvided": "Belirtilmemiş",
     "unknown": "Bilinmiyor",
     "memberSince": "Üyelik Tarihi"
+  },
+  "cart": {
+    "title": "Alışveriş Sepeti",
+    "empty": "Sepetiniz boş",
+    "quantity": "Adet",
+    "subtotal": "Ara Toplam",
+    "total": "Toplam",
+    "clearAll": "Tümünü Temizle"
   }
 }

@@ -1,5 +1,10 @@
-import { Rate } from "antd";
+import { Rate, Button } from "antd";
+import { ShoppingCartOutlined, CheckOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useCart } from "../../../../context/cart/CartContext";
+import { useNavigate } from "react-router";
+import { UserAuth } from "../../../../context/auth/AuthContext";
 
 interface ProductImages {
   yellow: string;
@@ -8,6 +13,7 @@ interface ProductImages {
 }
 
 interface ProductItemProps {
+  id: string;
   name: string;
   popularity_score: number;
   images: ProductImages;
@@ -15,11 +21,16 @@ interface ProductItemProps {
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({
+  id,
   name,
   popularity_score,
   price,
   images,
 }) => {
+  const navigate = useNavigate();
+  const { session } = UserAuth();
+  const { t } = useTranslation("landing");
+  const { addToCart, isInCart } = useCart();
   const [selectedColor, setSelectedColor] = useState<
     "yellow" | "white" | "rose"
   >("yellow");
@@ -31,6 +42,18 @@ const ProductItem: React.FC<ProductItemProps> = ({
   ];
 
   const starRating = Number((popularity_score * 5).toFixed(1));
+  const itemInCart = isInCart(id, selectedColor);
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      name,
+      price,
+      selectedColor,
+      image: images[selectedColor],
+      popularity_score,
+    });
+  };
 
   return (
     <div className="rounded-lg p-4 max-w-sm mx-auto">
@@ -74,7 +97,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       </p>
 
       {/* Popularity Score (Star Rating) */}
-      <div className="flex">
+      <div className="flex mb-4">
         <Rate
           disabled
           defaultValue={starRating}
@@ -83,6 +106,31 @@ const ProductItem: React.FC<ProductItemProps> = ({
         />
         <span className="ml-2 text-gray-600 text-sm">{starRating}/5</span>
       </div>
+
+      {/* Add to Cart Button */}
+      <Button
+        type="primary"
+        icon={itemInCart ? <CheckOutlined /> : <ShoppingCartOutlined />}
+        onClick={() => {
+          if (!session) {
+            navigate("/auth/signup");
+          } else if (!itemInCart) {
+            handleAddToCart();
+          } else {
+            navigate("/profile");
+          }
+        }}
+        className={`w-full ${
+          itemInCart
+            ? "bg-green-500! hover:bg-green-600! border-green-500!"
+            : "bg-primary-500! hover:bg-primary-600! border-primary-500!"
+        }`}
+        size="middle"
+      >
+        {itemInCart
+          ? t("products.addedToCart") || "Added to Cart"
+          : t("products.addToCart") || "Add to Cart"}
+      </Button>
     </div>
   );
 };

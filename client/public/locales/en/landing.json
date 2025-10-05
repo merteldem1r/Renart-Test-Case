@@ -61,7 +61,14 @@
     "filter": "Filter",
     "reset": "Reset",
     "noProducts": "No products available",
-    "checkBackLater": "Please check back later for new arrivals."
+    "checkBackLater": "Please check back later for new arrivals.",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Go to Cart",
+    "colors": {
+      "yellow": "Yellow Gold",
+      "white": "White Gold",
+      "rose": "Rose Gold"
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",
