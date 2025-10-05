@@ -18,11 +18,13 @@ async function bootstrap() {
   );
   app.setGlobalPrefix("api/v1");
 
-  const corsOrigins = process.env.CORS_ORIGIN?.split(",") || [
-    "https://renart-test-case.vercel.app",
-    "http://localhost:3000",
-    "http://localhost:5173",
-  ];
+  const corsOrigins = process.env.CORS_ORIGIN
+    ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
+    : [
+        "https://renart-test-case.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:5173",
+      ];
 
   const corsConfig = {
     origin: process.env.NODE_ENV === "development" ? true : corsOrigins,
@@ -48,7 +50,10 @@ async function bootstrap() {
   });
 
   await app.register(cors, corsConfig);
-  await app.register(helmet);
+  await app.register(helmet, {
+    crossOriginEmbedderPolicy: false,
+    contentSecurityPolicy: false,
+  });
   await app.register(rateLimit, {
     max: 300,
     timeWindow: "1 minute",
@@ -78,7 +83,10 @@ async function bootstrap() {
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
-  await app.listen({ port: Number(process.env.PORT) || 3000, host: "0.0.0.0" });
+  const port = Number(process.env.PORT) || 3000;
+  await app.listen({ port, host: "0.0.0.0" });
+
+  console.log(`Server running on port ${port}`);
 }
 
 bootstrap();
