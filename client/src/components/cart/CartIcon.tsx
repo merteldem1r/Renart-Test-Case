@@ -4,11 +4,7 @@ import React from "react";
 import { NavLink } from "react-router";
 import { useCart } from "../../context/cart/CartContext";
 
-interface CartIconProps {
-  onClick?: () => void;
-}
-
-const CartIcon: React.FC<CartIconProps> = ({ onClick }) => {
+const CartIcon: React.FC = () => {
   const { itemsCount } = useCart();
 
   return (

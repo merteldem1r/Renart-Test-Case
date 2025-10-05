@@ -7,7 +7,7 @@ import {
 import { Button, Card, Result, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { supabase } from "../../supabaseClient";
 
 const { Title } = Typography;
