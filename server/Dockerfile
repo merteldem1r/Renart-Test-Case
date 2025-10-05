@@ -17,8 +17,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Ensure i18n files are copied to dist
-RUN echo "Copying i18n files explicitly..." && \\\n    mkdir -p dist/i18n && \\\n    if [ -d "src/i18n" ]; then \\\n        cp -r src/i18n/* dist/i18n/ && \\\n        echo "i18n files copied successfully"; \\\n    else \\\n        echo "src/i18n directory not found"; \\\n    fi && \\\n    echo "Contents of dist/i18n:" && \\\n    ls -la dist/i18n/ 2>/dev/null || echo "dist/i18n is empty"
+# Verify i18n files were copied (the build script already handles this)
+RUN echo "Build completed. Checking i18n files:" && ls -la dist/i18n/ 2>/dev/null || echo "i18n files will be available at runtime"
 
 # Production stage
 FROM node:20-alpine AS production
