@@ -18,8 +18,13 @@ async function bootstrap() {
   );
   app.setGlobalPrefix("api/v1");
 
-  const corsOrigins = process.env.CORS_ORIGIN
-    ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
+  let corsOriginValue = process.env.CORS_ORIGIN;
+  if (corsOriginValue?.startsWith("CORS_ORIGIN=")) {
+    corsOriginValue = corsOriginValue.replace("CORS_ORIGIN=", "");
+  }
+
+  const corsOrigins = corsOriginValue
+    ? corsOriginValue.split(",").map((origin) => origin.trim())
     : [
         "https://renart-test-case.vercel.app",
         "http://localhost:3000",
@@ -47,6 +52,7 @@ async function bootstrap() {
     environment: process.env.NODE_ENV,
     origins: corsConfig.origin,
     corsOriginEnv: process.env.CORS_ORIGIN,
+    cleanedOrigins: corsOrigins,
   });
 
   await app.register(cors, corsConfig);
