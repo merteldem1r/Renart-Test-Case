@@ -50,13 +50,13 @@ apiClient.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Generic API client functions - FULL RESPONSE VERSION
 export const apiGet = async <T = any>(
   url: string,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.get<T>(url, config);
 };
@@ -64,7 +64,7 @@ export const apiGet = async <T = any>(
 export const apiPost = async <T = any>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.post<T>(url, data, config);
 };
@@ -72,7 +72,7 @@ export const apiPost = async <T = any>(
 export const apiPut = async <T = any>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.put<T>(url, data, config);
 };
@@ -80,98 +80,16 @@ export const apiPut = async <T = any>(
 export const apiPatch = async <T = any>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.patch<T>(url, data, config);
 };
 
 export const apiDelete = async <T = any>(
   url: string,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.delete<T>(url, config);
-};
-
-// CONVENIENCE FUNCTIONS - DATA ONLY (for backward compatibility)
-export const getData = async <T = any>(
-  url: string,
-  config?: AxiosRequestConfig
-): Promise<T> => {
-  const response = await apiGet<T>(url, config);
-  return response.data;
-};
-
-export const postData = async <T = any>(
-  url: string,
-  data?: any,
-  config?: AxiosRequestConfig
-): Promise<T> => {
-  const response = await apiPost<T>(url, data, config);
-  return response.data;
-};
-
-export const putData = async <T = any>(
-  url: string,
-  data?: any,
-  config?: AxiosRequestConfig
-): Promise<T> => {
-  const response = await apiPut<T>(url, data, config);
-  return response.data;
-};
-
-export const patchData = async <T = any>(
-  url: string,
-  data?: any,
-  config?: AxiosRequestConfig
-): Promise<T> => {
-  const response = await apiPatch<T>(url, data, config);
-  return response.data;
-};
-
-export const deleteData = async <T = any>(
-  url: string,
-  config?: AxiosRequestConfig
-): Promise<T> => {
-  const response = await apiDelete<T>(url, config);
-  return response.data;
-};
-
-// File upload function - FULL RESPONSE
-export const apiUpload = async <T = any>(
-  url: string,
-  file: File,
-  onUploadProgress?: (progressEvent: any) => void
-): Promise<AxiosResponse<T>> => {
-  const formData = new FormData();
-  formData.append("file", file);
-
-  return await apiClient.post<T>(url, formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-      ...securityHeaders.upload,
-      ...securityHeaders.security,
-    },
-    onUploadProgress,
-  });
-};
-
-// Profile-specific functions - UPDATED TO USE FULL RESPONSE
-export const getProfile = async (userId: string) => {
-  const response = await apiGet(`/profiles/${userId}`);
-  return response.data; // Still return data for convenience
-};
-
-export const updateProfile = async (userId: string, profileData: any) => {
-  const response = await apiPut(`/profiles/${userId}`, profileData);
-  return response.data;
-};
-
-export const verifyPhone = async (phoneData: {
-  phone: string;
-  verification_code: string;
-}) => {
-  const response = await apiPost("/profiles/verify-phone", phoneData);
-  return response.data;
 };
 
 // Export the axios instance for custom usage

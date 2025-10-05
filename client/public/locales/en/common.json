@@ -1,6 +1,30 @@
 {
   "welcome": "Welcome",
-  "loading": "Loading...",
-  "error": "Error",
-  "success": "Success"
+  "loading": "Loading products...",
+  "error": "Error loading data",
+  "success": "Success",
+  "profile": {
+    "title": "Profile",
+    "signInRequired": "Please sign in to view your profile",
+    "personalInfo": "Personal Information",
+    "accountDetails": "Account Details",
+    "about": "About",
+    "email": "Email",
+    "phone": "Phone",
+    "emailVerified": "Email Verified",
+    "verified": "Verified",
+    "notVerified": "Not Verified",
+    "pending": "Pending",
+    "userId": "User ID",
+    "joined": "Joined",
+    "lastSignIn": "Last Sign In",
+    "never": "Never",
+    "accountStatus": "Account Status",
+    "premiumMember": "Premium Member",
+    "user": "User",
+    "welcome": "Welcome to your Karat profile",
+    "notProvided": "Not provided",
+    "unknown": "Unknown",
+    "memberSince": "Member Since"
+  }
 }

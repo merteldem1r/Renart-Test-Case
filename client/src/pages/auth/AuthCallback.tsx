@@ -1,8 +1,8 @@
 import {
   CheckCircleOutlined,
   CloseCircleOutlined,
-  LoginOutlined,
   LoadingOutlined,
+  LoginOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Result, Typography } from "antd";
 import { useEffect, useState } from "react";
@@ -27,7 +27,6 @@ const AuthCallback: React.FC = () => {
   const [authStatus, setAuthStatus] =
     useState<AuthCallbackPageStatus>("VERIFYING");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [countdown, setCountdown] = useState<number>(5);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -39,7 +38,7 @@ const AuthCallback: React.FC = () => {
       window.history.replaceState(
         null,
         "",
-        location.pathname + location.search
+        location.pathname + location.search,
       );
     }
 
@@ -82,38 +81,9 @@ const AuthCallback: React.FC = () => {
     handleAuthCallback();
   }, []);
 
-  // Countdown timer effect for SUCCESS status
-  useEffect(() => {
-    if (authStatus === "SUCCESS") {
-      const interval = setInterval(() => {
-        setCountdown((prev) => {
-          if (prev <= 1) {
-            clearInterval(interval);
-            navigate("/dashboard");
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-  }, [authStatus, navigate]);
-
   return (
     <div className="min-h-screen bg-theme flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200">
       <div className="max-w-md w-full">
-        <div className="text-center mb-5">
-          <NavLink
-            to="/"
-            className="text-4xl font-bold group hover:text-blue-700 transition-colors duration-200"
-          >
-            <span className="text-blue-600 group-hover:text-black transition-colors">
-              Karat
-            </span>
-          </NavLink>
-        </div>
-
         <Card className="shadow-lg border-0 bg-theme-card border-theme">
           {authStatus === "VERIFYING" && (
             <Result
@@ -131,14 +101,11 @@ const AuthCallback: React.FC = () => {
             <Result
               icon={<CheckCircleOutlined style={{ color: "#52c41a" }} />}
               title={t("callback.success.title")}
-              subTitle={t("callback.success.subtitle", {
-                count: countdown,
-              })}
               extra={
                 <div className="mt-4">
                   <Button
                     type="primary"
-                    onClick={() => navigate("/dashboard")}
+                    onClick={() => navigate("/profile")}
                     className="btn-primary"
                   >
                     {t("callback.success.button")}
@@ -163,13 +130,13 @@ const AuthCallback: React.FC = () => {
                       <Button
                         type="primary"
                         icon={<LoginOutlined />}
-                        className="btn-primary w-full sm:w-auto"
+                        className="w-full flex items-center px-3 py-1 text-white! hover:bg-primary-50 rounded-md transition-all duration-200 border bg-primary-500! border-transparent hover:border-primary-200!"
                       >
                         {t("callback.error.signInButton")}
                       </Button>
                     </Link>
                     <Link to="/">
-                      <Button className="w-full sm:w-auto">
+                      <Button className="w-full flex items-center px-3 py-1 text-white! hover:bg-primary-50 rounded-md transition-all duration-200 border bg-primary-500! border-transparent hover:border-primary-200!">
                         {t("callback.error.homeButton")}
                       </Button>
                     </Link>

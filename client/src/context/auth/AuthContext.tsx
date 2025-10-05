@@ -54,18 +54,8 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "INITIAL_SESSION") {
-        // handle initial session
-      } else if (event === "SIGNED_IN") {
-        // handle sign in event
-      } else if (event === "SIGNED_OUT") {
+      if (event === "SIGNED_OUT") {
         setSession(null);
-      } else if (event === "PASSWORD_RECOVERY") {
-        // handle password recovery event
-      } else if (event === "TOKEN_REFRESHED") {
-        // handle token refreshed event
-      } else if (event === "USER_UPDATED") {
-        // handle user updated event
       } else if (session) {
         setSession(session);
       }

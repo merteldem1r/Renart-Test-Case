@@ -1,27 +1,109 @@
 {
   "header": {
     "navigation": {
-      "features": "Özellikler",
-      "pricing": "Fiyatlandırma",
+      "products": "Ürünler",
+      "aboutUs": "Hakkımızda", 
       "faq": "SSS"
     },
     "actions": {
-      "getStarted": "Hemen Başla",
-      "dashboard": "Kontrol Paneli",
+      "getStarted": "Üye Ol",
+      "dashboard": "Profil",
       "welcome": "Tekrar hoş geldin, {{username}}!"
     },
     "language": {
       "label": "Language / Dil"
     }
   },
+  "aboutUs": {
+    "hero": {
+      "title": "Eşsiz Karat Altın Koleksiyonu",
+      "subtitle": "El işçiliği ile hazırlanmış premium altın mücevher koleksiyonumuzu keşfedin. Her parça, zamansız güzellik yaratmak için en iyi malzemeler ve olağanüstü işçilik ile titizlikle tasarlanmıştır.",
+      "viewProducts": "Ürünleri Görüntüle",
+      "getStarted": "Üye Ol"
+    },
+    "features": {
+      "premium": {
+        "title": "Premium Kalite",
+        "description": "Her parça 18k ve 14k altın ile işlenerek kalıcı güzellik ve dayanıklılık sağlar."
+      },
+      "certified": {
+        "title": "Sertifikalı Orijinal",
+        "description": "Tüm mücevherlerimiz orijinallik ve saflığı garanti eden sertifika ile gelir."
+      },
+      "craftsmanship": {
+        "title": "Usta İşçiliği",
+        "description": "Deneyimli zanaatkarlarımız her el işi parçaya onlarca yıllık tecrübe katar."
+      },
+      "lifetime": {
+        "title": "Yaşam Boyu Garanti",
+        "description": "Tüm ürünlerde kapsamlı yaşam boyu garantisi ile kalitemizin arkasındayız."
+      }
+    },
+    "story": {
+      "title": "Mirasımız",
+      "description": "Elliden fazla yıldır Karat, kaliteli mücevher alanında mükemmelliğin simgesi olmuştur. Kalite, orijinallik ve müşteri memnuniyetine bağlılığımız bizi sektörde güvenilir bir isim haline getirmiştir."
+    },
+    "stats": {
+      "years": "Yıl Tecrübe",
+      "customers": "Mutlu Müşteri", 
+      "satisfaction": "Memnuniyet Oranı"
+    }
+  },
+  "products": {
+    "title": "Öne Çıkan Koleksiyon",
+    "subtitle": "Hayatın en değerli anlarını kutlamak için tasarlanmış, özenle seçilmiş premium altın mücevher koleksiyonumuzu keşfedin.",
+    "viewAll": "Tüm Ürünleri Görüntüle",
+    "filters": "Ürünleri Filtrele",
+    "priceRange": "Fiyat Aralığı",
+    "popularityRange": "Popülerlik",
+    "search": "Ürün Ara",
+    "searchPlaceholder": "İsme göre ara...",
+    "filter": "Filtrele",
+    "reset": "Sıfırla",
+    "noProducts": "Ürün bulunamadı",
+    "checkBackLater": "Lütfen yeni ürünler için daha sonra tekrar kontrol edin."
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Mücevherlerimiz, hizmetlerimiz ve politikalarımız hakkında sık sorulan soruların yanıtlarını bulun.",
+    "stillHaveQuestions": "Hala sorularınız mı var?",
+    "contactUs": "Bize Ulaşın",
+    "items": {
+      "quality": {
+        "question": "Altın mücevherlerinizin kalitesi nasıl?",
+        "answer": "Tüm mücevherlerimiz orijinal 18k ve 14k altın ile işlenmiştir. Her parça orijinallik sertifikası ile gelir ve güvenceniz için hallmark damgası taşır."
+      },
+      "shipping": {
+        "question": "Kargo ne kadar sürer?",
+        "answer": "Türkiye içi standart kargo 2-4 iş günü sürer. Hızlı kargo (1-2 gün) ve uluslararası kargo seçenekleri de mevcuttur. Tüm siparişler sigortalı ve takip edilebilirdir."
+      },
+      "sizing": {
+        "question": "Doğru yüzük ölçüsünü nasıl belirlerim?",
+        "answer": "Talep üzerine ücretsiz yüzük ölçüm kiti sağlıyoruz. Ölçü rehberimizi ziyaret edebilir veya kişiselleştirilmiş yardım için müşteri hizmetlerimizle iletişime geçebilirsiniz."
+      },
+      "returns": {
+        "question": "İade politikanız nedir?",
+        "answer": "Orijinal durumunda kullanılmamış ürünler için 30 günlük iade politikası sunuyoruz. Özel ürünlerin farklı iade koşulları olabilir. Tüm iadeler tam para iadesi ile işlenir."
+      },
+      "maintenance": {
+        "question": "Altın mücevherlerimi nasıl bakmalıyım?",
+        "answer": "Parçaları ayrı saklayın, hafif sabun ve yumuşak bezle temizleyin, sert kimyasallardan kaçının ve yılda bir profesyonel temizlik yaptırın. Ücretsiz bakım hizmetleri sunuyoruz."
+      },
+      "customization": {
+        "question": "Özel mücevher tasarımı yapıyor musunuz?",
+        "answer": "Evet! Usta zanaatkarlarımız spesifikasyonlarınıza göre özel parçalar oluşturabilir. Vizyonunuzu görüşmek ve kişiselleştirilmiş fiyat teklifi almak için bizimle iletişime geçin."
+      }
+    }
+  },
   "footer": {
     "company": {
-      "name": "Karat AI",
-      "description": "bir seyler."
+      "name": "Karat",
+      "description": "Tutku, hassasiyet ve onlarca yıllık uzmanlıkla işlenmiş premium altın mücevherler. Hayatın en değerli anları için zamansız parçalar yaratıyoruz."
     },
     "quickLinks": {
       "title": "Hızlı Bağlantılar",
       "home": "Ana Sayfa",
+      "faq": "SSS",
       "login": "Giriş"
     },
     "support": {

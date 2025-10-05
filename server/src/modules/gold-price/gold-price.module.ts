@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { GoldPriceService } from './gold-price.service';
-import { GoldPriceController } from './gold-price.controller';
+import { Module } from "@nestjs/common";
+import { GoldPriceService } from "./gold-price.service";
 
 @Module({
-  controllers: [GoldPriceController],
+  controllers: [],
   providers: [GoldPriceService],
+  exports: [GoldPriceService],
 })
 export class GoldPriceModule {}

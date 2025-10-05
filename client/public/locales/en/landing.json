@@ -1,23 +1,104 @@
 {
   "header": {
     "navigation": {
-      "features": "Features",
-      "pricing": "Pricing",
+      "products": "Products",
+      "aboutUs": "About Us",
       "faq": "FAQ"
     },
     "actions": {
-      "getStarted": "Get Started",
-      "dashboard": "Dashboard",
+      "getStarted": "Sign Up",
+      "dashboard": "Profile",
       "welcome": "Welcome back, {{username}}!"
     },
     "language": {
       "label": "Language / Dil"
     }
   },
+  "aboutUs": {
+    "hero": {
+      "title": "Exquisite Karat Gold Collection",
+      "subtitle": "Discover our premium collection of handcrafted gold jewelry. Each piece is meticulously designed with the finest materials and exceptional craftsmanship to create timeless beauty.",
+      "viewProducts": "View Products",
+      "getStarted": "Sign Up"
+    },
+    "features": {
+      "premium": {
+        "title": "Premium Quality",
+        "description": "Each piece is crafted with 18k and 14k gold, ensuring lasting beauty and durability."
+      },
+      "certified": {
+        "title": "Certified Authentic",
+        "description": "All our jewelry comes with certification guaranteeing authenticity and purity."
+      },
+      "craftsmanship": {
+        "title": "Master Craftsmanship",
+        "description": "Our skilled artisans bring decades of experience to every handcrafted piece."
+      },
+      "lifetime": {
+        "title": "Lifetime Warranty",
+        "description": "We stand behind our quality with comprehensive lifetime warranty on all products."
+      }
+    },
+    "story": {
+      "title": "Our Heritage",
+      "description": "For over five decades, Karat has been synonymous with excellence in fine jewelry. Our commitment to quality, authenticity, and customer satisfaction has made us a trusted name in the industry."
+    },
+    "stats": {
+      "years": "Years Experience", 
+      "customers": "Happy Customers",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "products": {
+    "title": "Featured Collection",
+    "subtitle": "Explore our carefully curated selection of premium gold jewelry, each piece designed to celebrate life's most precious moments.",
+    "viewAll": "View All Products",
+    "filters": "Filter Products",
+    "priceRange": "Price Range",
+    "popularityRange": "Popularity",
+    "search": "Search Products",
+    "searchPlaceholder": "Search by name...",
+    "filter": "Filter",
+    "reset": "Reset",
+    "noProducts": "No products available",
+    "checkBackLater": "Please check back later for new arrivals."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our jewelry, services, and policies.",
+    "stillHaveQuestions": "Still have questions?",
+    "contactUs": "Contact Us",
+    "items": {
+      "quality": {
+        "question": "What is the quality of your gold jewelry?",
+        "answer": "All our jewelry is crafted with authentic 18k and 14k gold. Each piece comes with a certificate of authenticity and is hallmarked for your assurance."
+      },
+      "shipping": {
+        "question": "How long does shipping take?",
+        "answer": "Standard shipping takes 3-5 business days within the US. Express shipping (1-2 days) and international shipping options are also available. All orders are fully insured and tracked."
+      },
+      "sizing": {
+        "question": "How do I determine the right ring size?",
+        "answer": "We provide a complimentary ring sizing kit upon request. You can also visit our size guide or contact our customer service for personalized assistance."
+      },
+      "returns": {
+        "question": "What is your return policy?",
+        "answer": "We offer a 30-day return policy for unused items in original condition. Custom pieces may have different return terms. All returns are processed with full refund."
+      },
+      "maintenance": {
+        "question": "How should I care for my gold jewelry?",
+        "answer": "Store pieces separately, clean with mild soap and soft cloth, avoid harsh chemicals, and bring for professional cleaning annually. We offer complimentary maintenance services."
+      },
+      "customization": {
+        "question": "Do you offer custom jewelry design?",
+        "answer": "Yes! Our master craftsmen can create bespoke pieces tailored to your specifications. Contact us to discuss your vision and receive a personalized quote."
+      }
+    }
+  },
   "footer": {
     "company": {
-      "name": "Karat AI",
-      "description": "something."
+      "name": "Karat",
+      "description": "Premium gold jewelry crafted with passion, precision, and decades of expertise. Creating timeless pieces for life's most precious moments."
     },
     "quickLinks": {
        "title": "Quick Links",
@@ -32,6 +113,6 @@
       "termsOfService": "Terms of Service",
       "privacyPolicy": "Privacy Policy"
     },
-    "copyright": "© 2024 Karat - Renart. All rights reserved."
+    "copyright": "© 2024 Karat. All rights reserved."
   }
 }

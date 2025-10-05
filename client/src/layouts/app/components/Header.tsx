@@ -2,16 +2,17 @@ import { CheckOutlined, CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Space } from "antd";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { UserAuth } from "../../../context/auth/AuthContext";
 import { useScrollToTop } from "../../../hooks/useScrollToTop";
 
 const Header: React.FC = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
   const { session } = UserAuth();
   const { scrollToElement, scrollToTop } = useScrollToTop();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { i18n, t } = useTranslation('landing');
+  const { i18n, t } = useTranslation("landing");
 
   const languages = {
     en: { key: "en", flag: "🇬🇧", name: "English" },
@@ -26,9 +27,9 @@ const Header: React.FC = () => {
   };
 
   const navItems = [
-    { label: t('header.navigation.features'), scrollElement: "features" },
-    { label: t('header.navigation.pricing'), scrollElement: "pricing" },
-    { label: t('header.navigation.faq'), scrollElement: "faq" },
+    { label: t("header.navigation.aboutUs"), scrollElement: "about-us" },
+    { label: t("header.navigation.products"), scrollElement: "products" },
+    { label: t("header.navigation.faq"), scrollElement: "faq" },
   ];
 
   const toggleMobileMenu = () => {
@@ -44,10 +45,10 @@ const Header: React.FC = () => {
             <Link
               to={""}
               onClick={() => scrollToTop()}
-              className="text-2xl font-bold group hover:text-blue-700 transition-colors duration-200"
+              className="text-2xl font-bold group transition-colors duration-200"
             >
-              <span className="text-blue-600 group-hover:text-black transition-colors">
-                Karat
+              <span className="text-primary-500 group-hover:text-primary-600 transition-colors">
+                Renart Karat
               </span>
             </Link>
           </div>
@@ -57,8 +58,12 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <a
                 key={item.label}
-                onClick={() => scrollToElement(item.scrollElement)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 cursor-pointer"
+                onClick={() =>
+                  scrollToElement(item.scrollElement, {
+                    navigateTo: location.pathname == "/" ? null : "/",
+                  })
+                }
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 cursor-pointer"
               >
                 {item.label}
               </a>
@@ -86,7 +91,7 @@ const Header: React.FC = () => {
             >
               <Button
                 type="text"
-                className="flex items-center px-3 py-1 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-all duration-200 border border-transparent hover:border-gray-200"
+                className="flex items-center px-3 py-1 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-all duration-200 border border-transparent hover:border-primary-200"
               >
                 <span className="text-lg">{currentLanguage.flag}</span>
                 <span className="text-sm font-medium">
@@ -97,7 +102,10 @@ const Header: React.FC = () => {
 
             {session ? (
               <div className="flex items-center space-x-3">
-                <NavLink to="dashboard" className="hover:text-blue-700">
+                <NavLink
+                  to="profile"
+                  className="hover:text-primary-700 transition-colors"
+                >
                   @{session.user.user_metadata.username}
                 </NavLink>
               </div>
@@ -105,10 +113,10 @@ const Header: React.FC = () => {
               <Button
                 type="primary"
                 size="middle"
-                className="ml-4 bg-blue-600 hover:bg-blue-700 border-none rounded-lg px-6"
+                className="ml-4 bg-primary-500 hover:bg-primary-600 border-none rounded-lg px-6"
                 onClick={() => navigate("auth/signup")}
               >
-                {t('header.actions.getStarted')}
+                {t("header.actions.getStarted")}
               </Button>
             )}
           </nav>
@@ -119,7 +127,7 @@ const Header: React.FC = () => {
               type="text"
               icon={mobileMenuOpen ? <CloseOutlined /> : <MenuOutlined />}
               onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-primary-600 transition-colors"
             />
           </div>
         </div>
@@ -135,7 +143,7 @@ const Header: React.FC = () => {
                     scrollToElement(item.scrollElement);
                     toggleMobileMenu();
                   }}
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-1 transition-colors duration-200 cursor-pointer"
+                  className="block text-gray-700 hover:text-primary-600 font-medium py-1 transition-colors duration-200 cursor-pointer"
                 >
                   {item.label}
                 </a>
@@ -144,7 +152,7 @@ const Header: React.FC = () => {
               {/* Mobile Language Selector */}
               <div className="border-t border-gray-200 pt-4 mt-4">
                 <div className="text-gray-500 text-sm font-medium mb-2">
-                  {t('header.language.label')}
+                  {t("header.language.label")}
                 </div>
                 <div className="flex space-x-2">
                   {Object.values(languages).map((lang) => (
@@ -154,8 +162,8 @@ const Header: React.FC = () => {
                       type={i18n.language === lang.key ? "primary" : "default"}
                       className={`flex items-center space-x-1 ${
                         i18n.language === lang.key
-                          ? "bg-blue-600 hover:bg-blue-700 border-blue-600"
-                          : "hover:border-blue-600 hover:text-blue-600"
+                          ? "bg-primary-500 border-primary-500 text-white"
+                          : "border-primary-600 text-primary-600 hover:bg-primary-50"
                       }`}
                       onClick={() => {
                         handleLanguageChange(lang.key);
@@ -172,31 +180,33 @@ const Header: React.FC = () => {
               {session ? (
                 <div className="mt-4 space-y-3">
                   <div className="text-gray-700 font-medium text-center py-2">
-                    {t('header.actions.welcome', { username: session.user.user_metadata.username })}
+                    {t("header.actions.welcome", {
+                      username: session.user.user_metadata.username,
+                    })}
                   </div>
                   <Button
                     type="primary"
                     size="large"
-                    className="w-full bg-blue-600 hover:bg-blue-700 border-none rounded-lg"
+                    className="w-full bg-primary-500 hover:bg-primary-600 border-none rounded-lg"
                     onClick={() => {
-                      navigate("/dashboard");
+                      navigate("/profile");
                       toggleMobileMenu();
                     }}
                   >
-                    {t('header.actions.dashboard')}
+                    {t("header.actions.dashboard")}
                   </Button>
                 </div>
               ) : (
                 <Button
                   type="primary"
                   size="large"
-                  className="mt-4 w-full bg-blue-600 hover:bg-blue-700 border-none rounded-lg"
+                  className="mt-4 w-full bg-primary-500 hover:bg-primary-600 border-none rounded-lg"
                   onClick={() => {
                     navigate("auth/signup");
                     toggleMobileMenu();
                   }}
                 >
-                  {t('header.actions.getStarted')}
+                  {t("header.actions.getStarted")}
                 </Button>
               )}
             </nav>

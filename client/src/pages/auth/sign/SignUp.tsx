@@ -47,10 +47,8 @@ const SignUp: React.FC = () => {
       if (res.status == 200 || res.status == 201) {
         showNotification.success(
           t("signup.notifications.success.title"),
-          t("signup.notifications.success.description")
+          t("signup.notifications.success.description"),
         );
-
-        console.log("res: ", res);
 
         navigate("/auth/signin");
       }
@@ -69,9 +67,9 @@ const SignUp: React.FC = () => {
         <div className="text-center mb-8">
           <NavLink
             to="/"
-            className="text-4xl font-bold group hover:text-blue-700 transition-colors duration-200"
+            className="text-4xl font-bold group hover:text-primary-700 transition-colors duration-200"
           >
-            <span className="text-blue-600 group-hover:text-black transition-colors">
+            <span className="text-primary-500 group-hover:text-primary-800 transition-colors">
               Karat
             </span>
           </NavLink>
@@ -106,7 +104,7 @@ const SignUp: React.FC = () => {
                     title={t("signup.form.username.tooltip")}
                     placement="top"
                   >
-                    <InfoCircleOutlined className="text-gray-400 hover:text-blue-500 cursor-help" />
+                    <InfoCircleOutlined className="text-gray-400 hover:text-primary-500 cursor-help" />
                   </Tooltip>
                 </span>
               }
@@ -132,7 +130,7 @@ const SignUp: React.FC = () => {
                     title={t("signup.form.email.tooltip")}
                     placement="top"
                   >
-                    <InfoCircleOutlined className="text-gray-400 hover:text-blue-500 cursor-help" />
+                    <InfoCircleOutlined className="text-gray-400 hover:text-primary-500 cursor-help" />
                   </Tooltip>
                 </span>
               }
@@ -185,7 +183,7 @@ const SignUp: React.FC = () => {
                       return Promise.resolve();
                     }
                     return Promise.reject(
-                      new Error(t("signup.form.confirmPassword.mismatch"))
+                      new Error(t("signup.form.confirmPassword.mismatch")),
                     );
                   },
                 }),
@@ -208,7 +206,7 @@ const SignUp: React.FC = () => {
                     value
                       ? Promise.resolve()
                       : Promise.reject(
-                          new Error(t("signup.form.agreeToTerms.required"))
+                          new Error(t("signup.form.agreeToTerms.required")),
                         ),
                 },
               ]}
@@ -218,14 +216,14 @@ const SignUp: React.FC = () => {
                   {t("signup.form.agreeToTerms.text")}{" "}
                   <Link
                     to="/terms"
-                    className="text-blue-600 hover:text-blue-700"
+                    className="text-primary-600 hover:text-primary-700"
                   >
                     {t("signup.form.agreeToTerms.termsOfService")}
                   </Link>{" "}
                   {t("signup.form.agreeToTerms.and")}{" "}
                   <Link
                     to="/privacy"
-                    className="text-blue-600 hover:text-blue-700"
+                    className="text-primary-600 hover:text-primary-700"
                   >
                     {t("signup.form.agreeToTerms.privacyPolicy")}
                   </Link>
@@ -235,10 +233,9 @@ const SignUp: React.FC = () => {
 
             <Form.Item>
               <Button
-                type="primary"
                 htmlType="submit"
                 loading={isPending}
-                className="w-full btn-primary h-12 text-base font-medium"
+                className="w-full flex items-center px-3 py-1 text-white! hover:bg-primary-50 rounded-md transition-all duration-200 border bg-primary-500! border-transparent hover:border-primary-200!"
               >
                 {t("signup.form.submitButton")}
               </Button>
@@ -250,7 +247,7 @@ const SignUp: React.FC = () => {
               {t("signup.footer.hasAccount")}{" "}
               <Link
                 to="/auth/signin"
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-primary-600! hover:text-primary-700! font-medium"
               >
                 {t("signup.footer.signInLink")}
               </Link>

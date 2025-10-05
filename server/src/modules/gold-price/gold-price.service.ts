@@ -1,26 +1,56 @@
-import { Injectable } from '@nestjs/common';
-import { CreateGoldPriceDto } from './dto/create-gold-price.dto';
-import { UpdateGoldPriceDto } from './dto/update-gold-price.dto';
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class GoldPriceService {
-  create(createGoldPriceDto: CreateGoldPriceDto) {
-    return 'This action adds a new goldPrice';
+  private cachedPrice: number | null = null;
+  private lastFetchedTime: number = 0;
+  private readonly CACHE_DURATION_MS = 15 * 60 * 1000; // cache for 15 min
+
+  private async fetchFromGoldPriceOrg(): Promise<number | null> {
+    try {
+      const response = await fetch(`${process.env.GOLD_API}`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      console.log(data);
+
+      // ounce to gram (1 troy oz = 31.1035 grams)
+      const pricePerGram = data.price / 31.1035;
+      return pricePerGram;
+    } catch (error) {
+      return null;
+    }
   }
 
-  findAll() {
-    return `This action returns all goldPrice`;
-  }
+  async getCurrentGoldPricePerGram(): Promise<number> {
+    if (
+      this.cachedPrice &&
+      Date.now() - this.lastFetchedTime < this.CACHE_DURATION_MS
+    ) {
+      return this.cachedPrice;
+    }
 
-  findOne(id: number) {
-    return `This action returns a #${id} goldPrice`;
-  }
+    try {
+      let goldPrice = await this.fetchFromGoldPriceOrg();
 
-  update(id: number, updateGoldPriceDto: UpdateGoldPriceDto) {
-    return `This action updates a #${id} goldPrice`;
-  }
+      if (!goldPrice) {
+        goldPrice = 65;
+      }
 
-  remove(id: number) {
-    return `This action removes a #${id} goldPrice`;
+      this.cachedPrice = goldPrice;
+      this.lastFetchedTime = Date.now();
+
+      return goldPrice;
+    } catch (error) {
+      if (this.cachedPrice) {
+        return this.cachedPrice;
+      }
+
+      return 65;
+    }
   }
 }

@@ -1,6 +1,30 @@
 {
   "welcome": "Hoş geldiniz",
-  "loading": "Yükleniyor...",
-  "error": "Hata",
-  "success": "Başarılı"
+  "loading": "Ürünler yükleniyor...",
+  "error": "Veri yükleme hatası",
+  "success": "Başarılı",
+  "profile": {
+    "title": "Profil",
+    "signInRequired": "Profilinizi görüntülemek için giriş yapın",
+    "personalInfo": "Kişisel Bilgiler",
+    "accountDetails": "Hesap Detayları",
+    "about": "Hakkında",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "emailVerified": "E-posta Doğrulandı",
+    "verified": "Doğrulandı",
+    "notVerified": "Doğrulanmadı",
+    "pending": "Beklemede",
+    "userId": "Kullanıcı ID",
+    "joined": "Katılım Tarihi",
+    "lastSignIn": "Son Giriş",
+    "never": "Hiç",
+    "accountStatus": "Hesap Durumu",
+    "premiumMember": "Premium Üye",
+    "user": "Kullanıcı",
+    "welcome": "Karat profilinize hoş geldiniz",
+    "notProvided": "Belirtilmemiş",
+    "unknown": "Bilinmiyor",
+    "memberSince": "Üyelik Tarihi"
+  }
 }

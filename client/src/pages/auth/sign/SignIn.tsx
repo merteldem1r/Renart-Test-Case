@@ -30,12 +30,12 @@ const SignIn = () => {
 
       if (!res.success) {
         showNotification.error(
-          t(`signin.notifications.${res?.errorCode || "error"}`)
+          t(`signin.notifications.${res?.errorCode || "error"}`),
         );
         return;
       }
 
-      navigate("/dashboard");
+      navigate("/profile");
       showNotification.success(t("signin.notifications.success"));
     } catch (err) {
       const msg =
@@ -53,18 +53,15 @@ const SignIn = () => {
         <div className="text-center mb-8">
           <NavLink
             to="/"
-            className="text-4xl font-bold group hover:text-blue-700 transition-colors duration-200"
+            className="text-4xl font-bold group hover:text-primary-700 transition-colors duration-200"
           >
-            <span className="text-blue-600 group-hover:text-black transition-colors">
+            <span className="text-primary-500 group-hover:text-primary-800 transition-colors">
               Karat
             </span>
           </NavLink>
           <Title level={3} className="text-xl font-bold text-theme my-2">
             {t("signin.title")}
           </Title>
-          <Paragraph className="text-theme-secondary">
-            {t("signin.subtitle")}
-          </Paragraph>
         </div>
 
         {/* SignIn Form */}
@@ -116,7 +113,7 @@ const SignIn = () => {
               <div>
                 <Link
                   to="/forgot-password"
-                  className="text-blue-600 hover:text-blue-700 text-sm"
+                  className="text-primary-600! hover:text-primary-700! text-sm"
                 >
                   {t("signin.form.forgotPassword")}
                 </Link>
@@ -128,7 +125,7 @@ const SignIn = () => {
                 type="primary"
                 htmlType="submit"
                 loading={isPending}
-                className="w-full btn-primary h-12 text-base font-medium"
+                className="w-full flex items-center px-3 py-1 text-white! hover:bg-primary-50 rounded-md transition-all duration-200 border bg-primary-500! border-transparent hover:border-primary-200!"
               >
                 {t("signin.form.submitButton")}
               </Button>
@@ -140,7 +137,7 @@ const SignIn = () => {
               {t("signin.footer.noAccount")}{" "}
               <Link
                 to="/auth/signup"
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-primary-600! hover:text-primary-700! font-medium"
               >
                 {t("signin.footer.signUpLink")}
               </Link>
