@@ -33,6 +33,13 @@
     "quantity": "Adet",
     "subtotal": "Ara Toplam",
     "total": "Toplam",
-    "clearAll": "Tümünü Temizle"
+    "clearAll": "Tümünü Temizle",
+    "buyNow": "Satın Al",
+    "purchaseSuccess": "Satın Alma Başarılı!",
+    "purchaseMessage": "Farz edin ki bunları satın aldınız!",
+    "purchaseDescription": "Güzel mücevher koleksiyonunuz yolda!",
+    "purchaseThankYou": "Karat'ı seçtiğiniz için teşekkür ederiz - zarafet ve mükemmelliğin buluştuğu yer!",
+    "continueShopping": "Alışverişe Devam Et",
+    "close": "Kapat"
   }
 }

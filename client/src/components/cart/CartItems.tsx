@@ -1,9 +1,18 @@
-import { DeleteOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import { Button, Card, Empty, Image, InputNumber, List, Tag, Typography } from 'antd';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import type { CartItem } from '../../context/cart/CartContext';
-import { useCart } from '../../context/cart/CartContext';
+import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Card,
+  Empty,
+  Image,
+  InputNumber,
+  List,
+  Tag,
+  Typography,
+} from "antd";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import type { CartItem } from "../../context/cart/CartContext";
+import { useCart } from "../../context/cart/CartContext";
 
 const { Title, Text } = Typography;
 
@@ -12,8 +21,9 @@ interface CartItemsProps {
 }
 
 const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
-  const { t } = useTranslation(['common', 'landing']);
-  const { items, totalPrice, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { t } = useTranslation(["common", "landing"]);
+  const { items, totalPrice, removeFromCart, updateQuantity, clearCart } =
+    useCart();
 
   if (items.length === 0) {
     return (
@@ -21,14 +31,14 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
         {showTitle && (
           <Title level={4} className="text-primary-800 mb-4 flex items-center">
             <ShoppingCartOutlined className="mr-2" />
-            {t('cart.title') || 'Shopping Cart'}
+            {t("cart.title") || "Shopping Cart"}
           </Title>
         )}
         <Empty
           image={Empty.PRESENTED_IMAGE_SIMPLE}
           description={
             <Text className="text-gray-500">
-              {t('cart.empty') || 'Your cart is empty'}
+              {t("cart.empty") || "Your cart is empty"}
             </Text>
           }
         />
@@ -48,7 +58,7 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
         <div className="flex items-center justify-between mb-4">
           <Title level={4} className="text-primary-800 mb-0 flex items-center">
             <ShoppingCartOutlined className="mr-2" />
-            {t('cart.title') || 'Shopping Cart'} ({items.length})
+            {t("cart.title") || "Shopping Cart"} ({items.length})
           </Title>
           <Button
             type="text"
@@ -56,7 +66,7 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
             className="text-red-500 hover:text-red-700"
             size="small"
           >
-            {t('cart.clearAll') || 'Clear All'}
+            {t("cart.clearAll") || "Clear All"}
           </Button>
         </div>
       )}
@@ -86,9 +96,12 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
                 </Text>
                 <div className="flex items-center gap-2 mt-1">
                   <Tag color="gold" className="text-xs">
-                    {item.selectedColor === 'yellow' && (t('products.colors.yellow') || 'Yellow Gold')}
-                    {item.selectedColor === 'white' && (t('products.colors.white') || 'White Gold')}
-                    {item.selectedColor === 'rose' && (t('products.colors.rose') || 'Rose Gold')}
+                    {item.selectedColor === "yellow" &&
+                      (t("landing:products.colors.yellow") || "Yellow Gold")}
+                    {item.selectedColor === "white" &&
+                      (t("landing:products.colors.white") || "White Gold")}
+                    {item.selectedColor === "rose" &&
+                      (t("landing:products.colors.rose") || "Rose Gold")}
                   </Tag>
                 </div>
                 <Text className="text-lg font-semibold text-primary-600">
@@ -100,7 +113,7 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2">
                   <Text className="text-sm text-gray-500">
-                    {t('cart.quantity') || 'Qty'}:
+                    {t("cart.quantity") || "Qty"}:
                   </Text>
                   <InputNumber
                     min={1}
@@ -111,7 +124,7 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
                     className="w-16"
                   />
                 </div>
-                
+
                 <Button
                   type="text"
                   icon={<DeleteOutlined />}
@@ -123,10 +136,10 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
             </div>
 
             {/* Subtotal */}
-            <div className="mt-2 text-right">
+            <div className="mt-2 md:w-[200px]!">
               <Text className="text-sm text-gray-500">
-                {t('cart.subtotal') || 'Subtotal'}: 
-                <span className="font-semibold text-gray-900 ml-1">
+                <div>{t("cart.subtotal") || "Subtotal"}: </div>
+                <span className="font-semibold text-gray-900">
                   ${(item.price * item.quantity).toFixed(2)}
                 </span>
               </Text>
@@ -139,7 +152,7 @@ const CartItems: React.FC<CartItemsProps> = ({ showTitle = true }) => {
       <div className="mt-4 pt-4 border-t border-gray-200">
         <div className="flex justify-between items-center">
           <Title level={5} className="mb-0 text-gray-900">
-            {t('cart.total') || 'Total'}:
+            {t("cart.total") || "Total"}:
           </Title>
           <Title level={4} className="mb-0 text-primary-600">
             ${totalPrice.toFixed(2)}

@@ -47,7 +47,7 @@ const Products: React.FC = () => {
       id="products"
       className="py-20 bg-gradient-to-br from-white to-gray-50"
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto md:px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Title level={2} className="text-4xl font-bold text-gray-800 mb-4">
             {t("products.title")}
@@ -66,7 +66,7 @@ const Products: React.FC = () => {
         {isLoading && (
           <div className="flex justify-center items-center py-20">
             <span className="ml-4 text-lg text-gray-600">
-              {t("common.loading")}
+              {t("common:loading")}
             </span>
           </div>
         )}

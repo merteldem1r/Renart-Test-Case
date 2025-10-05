@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build && npm run copy-assets",
-    "copy-assets": "cp -r src/i18n dist/ || xcopy src\\i18n dist\\i18n /E /I",
+    "build": "nest build && npm run copy-i18n",
+    "copy-i18n": "cp -r src/i18n dist/ 2>/dev/null || true",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -18,7 +18,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "docker:build": "docker build -t karat-server .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env karat-server",
+    "docker:dev": "docker-compose up --build",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build"
   },
   "dependencies": {
     "@fastify/compress": "^8.1.0",

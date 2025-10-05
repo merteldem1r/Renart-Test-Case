@@ -1,7 +1,4 @@
-import {
-    ReloadOutlined,
-    SearchOutlined
-} from "@ant-design/icons";
+import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Slider, Typography } from "antd";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -50,7 +47,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
   return (
     <div className="">
-      <div className="flex w-full justify-center">
+      <div className="flex w-full px-5 md:px-0 justify-center">
         {/* Filter Title */}
         <Row gutter={[24, 16]} align="middle">
           <Col xs={24} sm={12} lg={6}>
@@ -122,7 +119,9 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                 {t("products.search") || "Search Products"}
               </Text>
               <Input
-                placeholder={t("products.searchPlaceholder") || "Search by name..."}
+                placeholder={
+                  t("products.searchPlaceholder") || "Search by name..."
+                }
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onPressEnter={handleFilter}

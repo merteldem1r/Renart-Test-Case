@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # NestJS Application
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=${DATABASE_URL}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - SUPABASE_JWT_SECRET=${SUPABASE_JWT_SECRET}
+      - CORS_ORIGIN=http://localhost:5173,http://localhost:3000
+    volumes:
+      # For development hot reload (optional)
+      - .:/app
+      - /app/node_modules
+    # Override CMD for development
+    command: npm run start:dev
+    networks:
+      - karat-network
+
+
+networks:
+  karat-network:
+    driver: bridge

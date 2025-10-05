@@ -17,7 +17,7 @@ import { I18nLanguageService } from "./language.service";
       loaderOptions: {
         path:
           process.env.NODE_ENV === "production"
-            ? path.join(__dirname, "../..", "i18n")
+            ? path.join(process.cwd(), "dist/i18n")
             : path.join(process.cwd(), "src/i18n"),
         watch: process.env.NODE_ENV !== "production",
       },

@@ -6,7 +6,6 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { jwtVerify } from 'jose';
 import { Profile } from 'src/modules/profiles/entities/profile.entity';
 import { Repository } from 'typeorm';
 
@@ -32,12 +31,16 @@ export class AuthGuard implements CanActivate {
     let payload: any;
 
     try {
+      // Dynamic import for jose library to handle ESM compatibility
+      const { jwtVerify } = await import('jose');
+      
       const { payload: p } = await jwtVerify(token, this.secret, {
         algorithms: ['HS256'],
         audience: 'authenticated',
       });
       payload = p;
-    } catch {
+    } catch (error) {
+      console.error('JWT verification failed:', error);
       throw new UnauthorizedException('Invalid or expired token');
     }
 

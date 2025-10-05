@@ -34,7 +34,16 @@ const settings = {
       breakpoint: 680,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
+        dots: false,
+      },
+    },
+
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
         dots: false,
       },
     },
@@ -42,7 +51,11 @@ const settings = {
 };
 
 const CustomSlider = (props: any) => {
-  return <Slider {...settings}>{props.children}</Slider>;
+  return (
+    <div className="relative px-4 lg:px-16 xl:px-20">
+      <Slider {...settings}>{props.children}</Slider>
+    </div>
+  );
 };
 
 export default CustomSlider;

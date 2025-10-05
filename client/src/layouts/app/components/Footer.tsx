@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
             </Text>
             <div className="flex space-x-4">
               <a
+                href="https://github.com/merteldem1r"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-200"
@@ -29,6 +30,7 @@ const Footer: React.FC = () => {
                 <GithubOutlined className="text-2xl" />
               </a>
               <a
+                href="https://www.linkedin.com/in/merteldemir/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-200"
@@ -46,9 +48,6 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <a href="#" className="block transition-colors duration-200">
                 {t("footer.quickLinks.home")}
-              </a>
-              <a href="#" className="block transition-colors duration-200">
-                {t("footer.quickLinks.pricing")}
               </a>
               <a href="#" className="block transition-colors duration-200">
                 {t("footer.quickLinks.faq")}

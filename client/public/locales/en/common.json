@@ -33,6 +33,13 @@
     "quantity": "Qty",
     "subtotal": "Subtotal",
     "total": "Total",
-    "clearAll": "Clear All"
+    "clearAll": "Clear All",
+    "buyNow": "Buy Now",
+    "purchaseSuccess": "Purchase Successful!",
+    "purchaseMessage": "Imagine that you have bought those!",
+    "purchaseDescription": "Your beautiful jewelry collection is on its way!",
+    "purchaseThankYou": "Thank you for choosing Karat - where elegance meets perfection!",
+    "continueShopping": "Continue Shopping",
+    "close": "Close"
   }
 }
