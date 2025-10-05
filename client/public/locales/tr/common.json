@@ -25,7 +25,8 @@
     "welcome": "Karat profilinize hoş geldiniz",
     "notProvided": "Belirtilmemiş",
     "unknown": "Bilinmiyor",
-    "memberSince": "Üyelik Tarihi"
+    "memberSince": "Üyelik Tarihi",
+    "logout": "Çıkış Yap"
   },
   "cart": {
     "title": "Alışveriş Sepeti",

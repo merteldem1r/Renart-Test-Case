@@ -2,6 +2,7 @@ import {
   CalendarOutlined,
   CheckCircleOutlined,
   CrownOutlined,
+  LogoutOutlined,
   MailOutlined,
   ShoppingOutlined,
   UserOutlined,
@@ -19,6 +20,7 @@ import {
 } from "antd";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import CartItems from "../../components/cart/CartItems";
 import { UserAuth } from "../../context/auth/AuthContext";
 import { useCart } from "../../context/cart/CartContext";
@@ -26,10 +28,11 @@ import { useCart } from "../../context/cart/CartContext";
 const { Title, Text } = Typography;
 
 export const Profile: React.FC = () => {
-  const { session } = UserAuth();
+  const { session, signOut } = UserAuth();
   const { t } = useTranslation("common");
   const { items, totalPrice, clearCart } = useCart();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const navigate = useNavigate();
 
   const handleBuyNow = () => {
     setIsModalVisible(true);
@@ -38,6 +41,15 @@ export const Profile: React.FC = () => {
   const handleModalOk = () => {
     setIsModalVisible(false);
     clearCart();
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      navigate("/");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   if (!session) {
@@ -66,6 +78,16 @@ export const Profile: React.FC = () => {
             <Text className="text-primary-600 text-lg">
               @{session.user.user_metadata.username}
             </Text>
+            <div className="mt-4">
+              <Button
+                type="default"
+                icon={<LogoutOutlined />}
+                onClick={handleLogout}
+                className="flex items-center px-4 py-2 text-red-600! hover:text-red-700! hover:bg-red-50 border-red-200! hover:border-red-300! rounded-md transition-all duration-200"
+              >
+                {t("profile.logout")}
+              </Button>
+            </div>
           </div>
 
           <Divider orientation="left" className="text-primary-700">

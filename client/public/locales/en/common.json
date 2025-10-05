@@ -25,7 +25,8 @@
     "welcome": "Welcome to your Karat profile",
     "notProvided": "Not provided",
     "unknown": "Unknown",
-    "memberSince": "Member Since"
+    "memberSince": "Member Since",
+    "logout": "Log Out"
   },
   "cart": {
     "title": "Shopping Cart",
