@@ -14,33 +14,8 @@ services:
       - SUPABASE_JWT_SECRET=${SUPABASE_JWT_SECRET}
       - CORS_ORIGIN=http://localhost:5173,http://localhost:3000
     volumes:
-      # For development hot reload (optional)
+      # For development hot reload
       - .:/app
       - /app/node_modules
-    # Override CMD for development
+    # Override CMD for development with hot reload
     command: npm run start:dev
-    depends_on:
-      - postgres
-    networks:
-      - karat-network
-
-  # PostgreSQL Database (Optional for local development)
-  postgres:
-    image: postgres:15-alpine
-    environment:
-      POSTGRES_DB: karat_db
-      POSTGRES_USER: karat_user
-      POSTGRES_PASSWORD: karat_password
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - karat-network
-
-volumes:
-  postgres_data:
-
-networks:
-  karat-network:
-    driver: bridge
