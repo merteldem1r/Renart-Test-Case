@@ -19,9 +19,27 @@ services:
       - /app/node_modules
     # Override CMD for development
     command: npm run start:dev
+    depends_on:
+      - postgres
     networks:
       - karat-network
 
+  # PostgreSQL Database (Optional for local development)
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: karat_db
+      POSTGRES_USER: karat_user
+      POSTGRES_PASSWORD: karat_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - karat-network
+
+volumes:
+  postgres_data:
 
 networks:
   karat-network:

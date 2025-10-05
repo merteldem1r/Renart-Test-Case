@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install ALL dependencies (including devDependencies for building)
-RUN npm ci
+# Use npm install if package-lock.json is not available
+RUN npm ci || npm install
 
 # Copy source code
 COPY . .
@@ -16,8 +17,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Ensure i18n files are copied to dist (NestJS build should handle this via nest-cli.json)
-RUN mkdir -p dist/i18n && cp -r src/i18n/* dist/i18n/ 2>/dev/null || echo "i18n files copied via nest-cli.json"
+# Ensure i18n files are copied to dist
+RUN echo "Copying i18n files explicitly..." && \\\n    mkdir -p dist/i18n && \\\n    if [ -d "src/i18n" ]; then \\\n        cp -r src/i18n/* dist/i18n/ && \\\n        echo "i18n files copied successfully"; \\\n    else \\\n        echo "src/i18n directory not found"; \\\n    fi && \\\n    echo "Contents of dist/i18n:" && \\\n    ls -la dist/i18n/ 2>/dev/null || echo "dist/i18n is empty"
 
 # Production stage
 FROM node:20-alpine AS production
@@ -32,7 +33,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Use npm install if package-lock.json is not available
+RUN (npm ci --omit=dev || npm install --only=production) && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/dist ./dist
