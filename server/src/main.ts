@@ -18,8 +18,14 @@ async function bootstrap() {
   );
   app.setGlobalPrefix("api/v1");
 
-  await app.register(cors, {
-    origin: process.env.CORS_ORIGIN?.split(",") ?? true,
+  const corsOrigins = process.env.CORS_ORIGIN?.split(",") || [
+    "https://renart-test-case.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:5173",
+  ];
+
+  const corsConfig = {
+    origin: process.env.NODE_ENV === "development" ? true : corsOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: [
@@ -27,10 +33,21 @@ async function bootstrap() {
       "Accept-Language",
       "Content-Type",
       "Authorization",
+      "X-Request-Time",
+      "X-CSRF-TOKEN",
+      "X-Environment",
     ],
     exposedHeaders: ["Content-Length", "Content-Type"],
     maxAge: 600,
+  };
+
+  console.log("CORS Configuration:", {
+    environment: process.env.NODE_ENV,
+    origins: corsConfig.origin,
+    corsOriginEnv: process.env.CORS_ORIGIN,
   });
+
+  await app.register(cors, corsConfig);
   await app.register(helmet);
   await app.register(rateLimit, {
     max: 300,
