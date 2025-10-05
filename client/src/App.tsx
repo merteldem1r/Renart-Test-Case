@@ -13,8 +13,6 @@ import SignUp from "./pages/auth/sign/SignUp";
 import LandingHome from "./pages/landing/LandingHome";
 import Profile from "./pages/profile/Profile";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const queryClient = new QueryClient();
 
