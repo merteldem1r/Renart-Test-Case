@@ -17,6 +17,12 @@ Karat is a sophisticated jewelry e-commerce platform that provides users with an
 <img width="1710" height="902" alt="renart-2" src="https://github.com/user-attachments/assets/33043686-5955-44f7-8f9f-0e915bac1425" />
 <img width="1710" height="906" alt="renart-3" src="https://github.com/user-attachments/assets/68bd981a-f34f-464d-80dd-09ccf10e8257" />
 
+## Database PostgreSQL with Supabase
+
+### I have inserted the provided JSON object of products with SQL query directly into the database and then fetching those from the client.
+
+![SQL](https://github.com/user-attachments/assets/ccfddd8c-5632-49df-bda0-94a59d23dbc7)
+
 ## Features
 
 ### **E-Commerce Functionality**
