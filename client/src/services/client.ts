@@ -1,8 +1,8 @@
-import axios from "axios";
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios from "axios";
 import i18n from "i18next";
-import securityHeaders from "./headers.json";
 import { supabase } from "../supabaseClient";
+import securityHeaders from "./headers.json";
 
 // Create axios instance with base configuration
 const apiClient: AxiosInstance = axios.create({
@@ -40,6 +40,14 @@ export const apiGet = async <T = any>(
   config?: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> => {
   return await apiClient.get<T>(url, config);
+};
+
+export const apiPost = async <T = any>(
+  url: string,
+  data?: any,
+  config?: AxiosRequestConfig,
+): Promise<AxiosResponse<T>> => {
+  return await apiClient.post<T>(url, data, config);
 };
 
 export default apiClient;
