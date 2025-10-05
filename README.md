@@ -8,7 +8,14 @@
 
 ## Overview
 
-Karat is a sophisticated jewelry e-commerce platform that provides users with an elegant shopping experience. The application features a modern UI/UX design, secure authentication, advanced product filtering, shopping cart functionality, and multi-language support.
+Karat is a sophisticated jewelry e-commerce platform that provides users with an elegant shopping experience. The application features a UI/UX design, authentication, product filtering & fetching, shopping cart functionality, dynamic Gold Price fetching and caching, and multi-language support via i18n.
+
+## App Preview
+
+<img width="1700" height="907" alt="renart-4" src="https://github.com/user-attachments/assets/3795c854-b179-416a-ad8a-0a4643997156" />
+<img width="1710" height="904" alt="renart-1" src="https://github.com/user-attachments/assets/b94fbe65-fcbd-402b-8a58-421e5325efc1" />
+<img width="1710" height="902" alt="renart-2" src="https://github.com/user-attachments/assets/33043686-5955-44f7-8f9f-0e915bac1425" />
+<img width="1710" height="906" alt="renart-3" src="https://github.com/user-attachments/assets/68bd981a-f34f-464d-80dd-09ccf10e8257" />
 
 ## Features
 
