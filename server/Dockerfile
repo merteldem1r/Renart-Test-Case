@@ -17,9 +17,6 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Verify i18n files were copied (the build script already handles this)
-RUN echo "Build completed. Checking i18n files:" && ls -la dist/i18n/ 2>/dev/null || echo "i18n files will be available at runtime"
-
 # Production stage
 FROM node:20-alpine AS production
 
