@@ -23,8 +23,6 @@
     "react": "^19.1.1",
     "react-i18next": "^16.0.0",
     "react-router": "^7.9.3",
-    "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
@@ -32,7 +30,6 @@
     "@tanstack/eslint-plugin-query": "^5.90.1",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^5.0.2",
     "eslint": "^9.35.0",
     "eslint-plugin-react-hooks": "^5.2.0",

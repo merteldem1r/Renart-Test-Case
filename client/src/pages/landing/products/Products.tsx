@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Alert, Typography } from "antd";
-import React, { useState } from "react";
+import { Alert, Typography, Button } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import CustomSlider from "../../../components/ui/CustomSlider";
 import type { FilterValues } from "./components/ProductFilters";
 import ProductFilters from "./components/ProductFilters";
 import ProductItem from "./components/ProductItem";
@@ -16,6 +16,7 @@ const Products: React.FC = () => {
   const [filters, setFilters] = useState<ProductFiltersType | undefined>(
     undefined,
   );
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Fetch products using TanStack Query
   const {
@@ -40,6 +41,26 @@ const Products: React.FC = () => {
 
   const handleResetFilters = () => {
     setFilters(undefined);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = window.innerWidth < 768 ? 300 : 350;
+      scrollContainerRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = window.innerWidth < 768 ? 300 : 350;
+      scrollContainerRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -87,19 +108,43 @@ const Products: React.FC = () => {
 
         {/* Products */}
         {!isLoading && !isError && products && products.length > 0 && (
-          <CustomSlider>
-            {products.map((product) => (
-              <div key={product.id}>
-                <ProductItem
-                  id={product.id}
-                  name={product.name}
-                  popularity_score={product.popularity_score}
-                  images={product.images}
-                  price={product.price}
-                />
+          <div className="relative px-4 lg:px-16 xl:px-20">
+            <Button
+              type="text"
+              icon={<LeftOutlined className="text-2xl!" />}
+              onClick={scrollLeft}
+              className="flex absolute! left-1 sm:-left-6 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full w-12 h-12 sm:w-16 sm:h-16 items-center justify-center border border-gray-200"
+            />
+            <Button
+              type="text"
+              icon={<RightOutlined className="text-2xl!" />}
+              onClick={scrollRight}
+              className="flex absolute! right-1 sm:-right-6 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full w-12 h-12 sm:w-16 sm:h-16 items-center justify-center border border-gray-200"
+            />
+
+            {/* Horizontal scroll container */}
+            <div
+              ref={scrollContainerRef}
+              className="overflow-x-auto pb-4 horizontal-scroll"
+            >
+              <div className="flex gap-6 w-max min-w-full">
+                {products.map((product) => (
+                  <div
+                    key={product.id}
+                    className="flex-shrink-0 w-[calc(100vw-2rem)] sm:w-[calc(50vw-3rem)] lg:w-[calc(33.333vw-4rem)] xl:w-[calc(25vw-4.5rem)] max-w-[320px]"
+                  >
+                    <ProductItem
+                      id={product.id}
+                      name={product.name}
+                      popularity_score={product.popularity_score}
+                      images={product.images}
+                      price={product.price}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </CustomSlider>
+            </div>
+          </div>
         )}
 
         {/* Empty State */}
